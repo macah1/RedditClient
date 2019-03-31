@@ -10,6 +10,11 @@ import UIKit
 
 class RedditPostTableViewCell: UITableViewCell {
 
+    // MARK: - Static
+    static let identifier = "redditPostCell"
+    static let name = "RedditPostTableViewCell"
+    
+    // MARK: - Outlets
     @IBOutlet weak var readDotLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var postDateLabel: UILabel!
@@ -18,6 +23,7 @@ class RedditPostTableViewCell: UITableViewCell {
     @IBOutlet weak var dismissPostButton: UIButton!
     @IBOutlet weak var commentsLabel: UILabel!
     
+    // MARK: - Funcs
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,6 +35,7 @@ class RedditPostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Actions
     @IBAction func dismissPostButtonAction(_ sender: Any) {
     }
     

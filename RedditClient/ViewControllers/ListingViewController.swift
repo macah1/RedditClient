@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  ListingViewController.swift
 //  RedditClient
 //
 //  Created by Maca on 31/03/2019.
@@ -10,8 +10,9 @@ import UIKit
 
 class ListingViewController: UITableViewController {
 
+    // Mark: - Properties
+    let kShowDetailSegueIdentifier = "showDetail"
     var detailViewController: DetailViewController? = nil
-    var objects = [Any]()
 
     // MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -32,7 +33,7 @@ class ListingViewController: UITableViewController {
 
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == kShowDetailSegueIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
 
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
@@ -53,31 +54,28 @@ class ListingViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "redditPostCell", for: indexPath) as? RedditPostTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: RedditPostTableViewCell.identifier, for: indexPath) as? RedditPostTableViewCell {
             cell.titleLabel.text = "Sample Text"
             return cell
         }
         return UITableViewCell()
     }
 
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: kShowDetailSegueIdentifier, sender: nil)
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            objects.remove(at: indexPath.row)
+//            objects.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
     
     // MARK: - Private
     fileprivate func registerTableViewCells() {
-        let redditPostCell = UINib(nibName: "RedditPostTableViewCell", bundle: nil)
-        self.tableView.register(redditPostCell, forCellReuseIdentifier: "redditPostCell")
+        let redditPostCell = UINib(nibName: RedditPostTableViewCell.name, bundle: nil)
+        self.tableView.register(redditPostCell, forCellReuseIdentifier: RedditPostTableViewCell.identifier)
     }
 
 }
