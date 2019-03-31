@@ -17,6 +17,10 @@
 		047CF0A82250E9B40071E1AC /* RedditClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF0A72250E9B40071E1AC /* RedditClientUITests.swift */; };
 		047CF0BC2250EBF20071E1AC /* RedditPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF0BA2250EBF20071E1AC /* RedditPostTableViewCell.swift */; };
 		047CF0BD2250EBF20071E1AC /* RedditPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047CF0BB2250EBF20071E1AC /* RedditPostTableViewCell.xib */; };
+		047CF0FC225104C00071E1AC /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF0FB225104C00071E1AC /* NetworkClient.swift */; };
+		047CF0FE225104F50071E1AC /* RedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF0FD225104F50071E1AC /* RedditAPI.swift */; };
+		047CF101225109600071E1AC /* TopPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF100225109600071E1AC /* TopPosts.swift */; };
+		047CF10322510A900071E1AC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF10222510A900071E1AC /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		047CF0A92250E9B40071E1AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		047CF0BA2250EBF20071E1AC /* RedditPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditPostTableViewCell.swift; sourceTree = "<group>"; };
 		047CF0BB2250EBF20071E1AC /* RedditPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedditPostTableViewCell.xib; sourceTree = "<group>"; };
+		047CF0FB225104C00071E1AC /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		047CF0FD225104F50071E1AC /* RedditAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditAPI.swift; sourceTree = "<group>"; };
+		047CF100225109600071E1AC /* TopPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPosts.swift; sourceTree = "<group>"; };
+		047CF10222510A900071E1AC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,8 @@
 		047CF0842250E9B30071E1AC /* RedditClient */ = {
 			isa = PBXGroup;
 			children = (
+				047CF0FF225107FA0071E1AC /* Models */,
+				047CF0FA225104A20071E1AC /* Networking */,
 				047CF0B82250EBB40071E1AC /* Views */,
 				047CF0B52250EA8E0071E1AC /* ViewControllers */,
 				047CF0B72250EAAD0071E1AC /* Storyboards */,
@@ -172,6 +182,24 @@
 				047CF0BB2250EBF20071E1AC /* RedditPostTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		047CF0FA225104A20071E1AC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				047CF0FB225104C00071E1AC /* NetworkClient.swift */,
+				047CF0FD225104F50071E1AC /* RedditAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		047CF0FF225107FA0071E1AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				047CF100225109600071E1AC /* TopPosts.swift */,
+				047CF10222510A900071E1AC /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				047CF08A2250E9B30071E1AC /* DetailViewController.swift in Sources */,
+				047CF0FC225104C00071E1AC /* NetworkClient.swift in Sources */,
+				047CF0FE225104F50071E1AC /* RedditAPI.swift in Sources */,
+				047CF10322510A900071E1AC /* Post.swift in Sources */,
+				047CF101225109600071E1AC /* TopPosts.swift in Sources */,
 				047CF0BC2250EBF20071E1AC /* RedditPostTableViewCell.swift in Sources */,
 				047CF0882250E9B30071E1AC /* ListingViewController.swift in Sources */,
 				047CF0862250E9B30071E1AC /* AppDelegate.swift in Sources */,
