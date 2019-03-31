@@ -21,6 +21,8 @@ class ListingViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        registerTableViewCells()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,11 +53,11 @@ class ListingViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "redditPostCell", for: indexPath) as? RedditPostTableViewCell {
+            cell.titleLabel.text = "Sample Text"
+            return cell
+        }
+        return UITableViewCell()
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -71,7 +73,12 @@ class ListingViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-
+    
+    // MARK: - Private
+    fileprivate func registerTableViewCells() {
+        let redditPostCell = UINib(nibName: "RedditPostTableViewCell", bundle: nil)
+        self.tableView.register(redditPostCell, forCellReuseIdentifier: "redditPostCell")
+    }
 
 }
 

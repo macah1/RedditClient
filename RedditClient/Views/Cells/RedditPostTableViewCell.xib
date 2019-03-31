@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="redditPostCell" rowHeight="262" id="KGk-i7-Jjw" customClass="RedditPostTableViewCell" customModule="RedditClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="359" height="262"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="325" height="261.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bm-qi-2Js">
+                        <rect key="frame" x="0.0" y="0.0" width="325" height="261.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ak8-AM-uJS">
+                                <rect key="frame" x="8" y="11.5" width="12" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="12" id="Y1w-Rj-faX"/>
+                                    <constraint firstAttribute="width" constant="12" id="hqa-d8-c8V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Qrd-k8-bbm">
+                                <rect key="frame" x="28" y="8" width="156" height="21.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfs-To-Mqz">
+                                        <rect key="frame" x="0.0" y="0.0" width="56.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="10 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0T-9a-NWO">
+                                        <rect key="frame" x="72.5" y="0.0" width="83.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-cB-6si">
+                                <rect key="frame" x="8" y="61" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="TdH-Hg-1PE"/>
+                                    <constraint firstAttribute="width" constant="140" id="mLL-Dp-ds7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reddit post title sample" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKC-Fc-bMY">
+                                <rect key="frame" x="156" y="122.5" width="165" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtu-fj-Xoy">
+                                <rect key="frame" x="8" y="213.5" width="125" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Blh-cQ-OBD"/>
+                                    <constraint firstAttribute="width" constant="125" id="VsF-to-pZz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" red="1" green="0.76225823790000002" blue="0.2884891671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Dismiss Post" image="round_highlight_off_black_18pt">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissPostButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VPD-oZ-F2f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1900 Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcB-Kh-M5G">
+                                <rect key="frame" x="214.5" y="225" width="106.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.76225823790000002" blue="0.2884891671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Qrd-k8-bbm" firstAttribute="top" secondItem="8bm-qi-2Js" secondAttribute="top" constant="8" id="1dI-Fg-IwY"/>
+                            <constraint firstItem="ak8-AM-uJS" firstAttribute="centerY" secondItem="Qrd-k8-bbm" secondAttribute="centerY" id="8V5-hL-0NH"/>
+                            <constraint firstItem="AYT-cB-6si" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qrd-k8-bbm" secondAttribute="bottom" constant="8" id="Eok-og-Q2b"/>
+                            <constraint firstItem="Xtu-fj-Xoy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hKC-Fc-bMY" secondAttribute="bottom" constant="8" id="F3A-ax-tYO"/>
+                            <constraint firstItem="AYT-cB-6si" firstAttribute="centerY" secondItem="8bm-qi-2Js" secondAttribute="centerY" id="Pf3-j4-28z"/>
+                            <constraint firstItem="Qrd-k8-bbm" firstAttribute="leading" secondItem="ak8-AM-uJS" secondAttribute="trailing" constant="8" id="QEg-Wg-WOu"/>
+                            <constraint firstAttribute="trailing" secondItem="hKC-Fc-bMY" secondAttribute="trailing" constant="4" id="Rhp-mj-1tZ"/>
+                            <constraint firstItem="hKC-Fc-bMY" firstAttribute="centerY" secondItem="8bm-qi-2Js" secondAttribute="centerY" id="SPp-H9-lbD"/>
+                            <constraint firstItem="ak8-AM-uJS" firstAttribute="leading" secondItem="8bm-qi-2Js" secondAttribute="leading" constant="8" id="YJM-OB-RZ2"/>
+                            <constraint firstItem="EcB-Kh-M5G" firstAttribute="centerY" secondItem="Xtu-fj-Xoy" secondAttribute="centerY" id="b4t-a6-nUN"/>
+                            <constraint firstItem="hKC-Fc-bMY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qrd-k8-bbm" secondAttribute="bottom" constant="8" id="bQi-cL-B7U"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qrd-k8-bbm" secondAttribute="trailing" constant="4" id="cuU-Mu-PSD"/>
+                            <constraint firstItem="AYT-cB-6si" firstAttribute="leading" secondItem="8bm-qi-2Js" secondAttribute="leading" constant="8" id="eCE-tQ-IPF"/>
+                            <constraint firstAttribute="trailing" secondItem="EcB-Kh-M5G" secondAttribute="trailing" constant="4" id="esm-cr-wN9"/>
+                            <constraint firstItem="Xtu-fj-Xoy" firstAttribute="leading" secondItem="8bm-qi-2Js" secondAttribute="leading" constant="8" id="hXf-ew-cwm"/>
+                            <constraint firstItem="hKC-Fc-bMY" firstAttribute="leading" secondItem="AYT-cB-6si" secondAttribute="trailing" constant="8" id="k9a-MK-TOq"/>
+                            <constraint firstItem="Xtu-fj-Xoy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AYT-cB-6si" secondAttribute="bottom" constant="8" id="yK6-xq-5w7"/>
+                            <constraint firstAttribute="bottom" secondItem="Xtu-fj-Xoy" secondAttribute="bottom" constant="8" id="zgo-fg-TIL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="8bm-qi-2Js" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5xK-0G-YEy"/>
+                    <constraint firstAttribute="bottom" secondItem="8bm-qi-2Js" secondAttribute="bottom" id="7gh-R7-ZXC"/>
+                    <constraint firstItem="8bm-qi-2Js" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8d5-GB-7yL"/>
+                    <constraint firstAttribute="trailing" secondItem="8bm-qi-2Js" secondAttribute="trailing" id="FZU-Cx-fuM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="authorLabel" destination="rfs-To-Mqz" id="qZN-fv-DeQ"/>
+                <outlet property="commentsLabel" destination="EcB-Kh-M5G" id="sdp-Qw-APb"/>
+                <outlet property="dismissPostButton" destination="Xtu-fj-Xoy" id="gqP-1c-ehw"/>
+                <outlet property="postDateLabel" destination="E0T-9a-NWO" id="dJ8-1i-dBR"/>
+                <outlet property="readDotLabel" destination="ak8-AM-uJS" id="R6Y-UE-PfH"/>
+                <outlet property="thumbImageView" destination="AYT-cB-6si" id="vSp-nM-mQb"/>
+                <outlet property="titleLabel" destination="hKC-Fc-bMY" id="tBW-rZ-Emg"/>
+            </connections>
+            <point key="canvasLocation" x="136.80000000000001" y="184.40779610194903"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="round_highlight_off_black_18pt" width="36" height="36"/>
+    </resources>
+</document>
