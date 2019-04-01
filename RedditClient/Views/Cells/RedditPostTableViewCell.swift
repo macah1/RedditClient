@@ -46,9 +46,13 @@ class RedditPostTableViewCell: UITableViewCell {
             } else {
                 commentsLabel.text = "\(numComments) comments"
             }
+        } else {
+            commentsLabel.text = ""
         }
         if let thumbnailURLString = post.thumbnail {
             thumbImageView.cacheImage(urlString: thumbnailURLString)
+        } else {
+            thumbImageView.image = nil
         }
     }
     
