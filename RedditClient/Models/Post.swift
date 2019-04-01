@@ -15,6 +15,7 @@ struct Post: Decodable {
     var thumbnail: String?
     var numComments: Int?
     var url: String?
+    var status: PostStatus = .new
     
     private enum DataKeys: String, CodingKey {
         case data
@@ -56,6 +57,9 @@ struct Post: Decodable {
         if let urlData = try? postContainer.decodeIfPresent(String.self, forKey: .url) {
             url = urlData
         }
-        
+    }
+    
+    mutating func setStatus(status: PostStatus) {
+        self.status = status
     }
 }

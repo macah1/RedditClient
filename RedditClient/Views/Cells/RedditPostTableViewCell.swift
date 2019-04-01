@@ -61,6 +61,16 @@ class RedditPostTableViewCell: UITableViewCell {
         } else {
             thumbImageView.image = nil
         }
+        
+        if post.status == .read {
+            readDotLabel.isHidden = true
+        } else {
+            readDotLabel.isHidden = false
+        }
+    }
+    
+    func setRead() {
+        readDotLabel.isHidden = true
     }
     
     // MARK: - Actions

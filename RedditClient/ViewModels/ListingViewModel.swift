@@ -18,6 +18,7 @@ class ListingViewModel {
     var posts: [Post]!
     var nextId: String?
     var hasMorePages = false
+    var isRefreshing = false
     
     private let pageSize = 20
     private let redditAPI: RedditAPI!
@@ -46,6 +47,10 @@ class ListingViewModel {
                 if topPosts.posts.isEmpty {
                     strongSelf.hasMorePages = false
                 } else {
+                    if strongSelf.isRefreshing {
+                        strongSelf.posts?.removeAll()
+                        strongSelf.isRefreshing = false
+                    }
                     strongSelf.posts?.append(contentsOf: topPosts.posts)
                     if let nextId = topPosts.nextId {
                         strongSelf.nextId = nextId
@@ -64,6 +69,17 @@ class ListingViewModel {
     
     func resetNextId() {
         nextId = nil
+    }
+    
+    func setToRefresh() {
+        isRefreshing = true
+        nextId = nil
+    }
+    
+    func setPostStatus(at index: Int, status: PostStatus) {
+        if index < posts.count {
+            posts[index].setStatus(status: status)
+        }
     }
     
     func getDetailViewModel(withPostIndex index: Int) -> DetailViewModel? {

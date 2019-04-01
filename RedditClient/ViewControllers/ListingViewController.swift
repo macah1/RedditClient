@@ -65,6 +65,9 @@ class ListingViewController: UIViewController {
         refreshControl = UIRefreshControl()
         refreshControl!.addTarget(self, action: #selector(refreshControlAction(sender:)), for: UIControl.Event.valueChanged)
         tableView.addSubview(refreshControl!)
+        
+        // removing empty cells separators
+        tableView.tableFooterView = UIView()
     }
     
     fileprivate func loadData() {
@@ -100,7 +103,7 @@ class ListingViewController: UIViewController {
     }
     
     @objc func refreshControlAction(sender: AnyObject) {
-        viewModel.reset()
+        viewModel.setToRefresh()
         loadData()
     }
     
@@ -142,6 +145,10 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? RedditPostTableViewCell {
+            cell.setRead()
+            viewModel.setPostStatus(at: indexPath.row, status: .read)
+        }
         self.performSegue(withIdentifier: kShowDetailSegueIdentifier, sender: indexPath.row)
     }
     
