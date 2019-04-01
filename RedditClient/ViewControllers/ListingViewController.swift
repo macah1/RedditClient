@@ -88,10 +88,19 @@ class ListingViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func dismissAllButtonAction(_ sender: Any) {
+        if viewModel.posts.isEmpty {
+            return
+        }
+        tableView.beginUpdates()
+        let indexSet = NSMutableIndexSet()
+        indexSet.add(0)
+        tableView.deleteSections(indexSet as IndexSet, with: .top)
+        viewModel.reset()
+        tableView.endUpdates()
     }
     
     @objc func refreshControlAction(sender: AnyObject) {
-        viewModel.resetNextId()
+        viewModel.reset()
         loadData()
     }
     
@@ -126,6 +135,7 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
             }
             let post = viewModel.posts[indexPath.row]
             cell.setup(withPost: post)
+            cell.delegate = self
             return cell
         }
         return UITableViewCell()
@@ -149,6 +159,15 @@ extension ListingViewController: ListingViewModelDelegate {
     func didEndLoadOperation() {
         self.refreshControl?.endRefreshing()
     }
-    
-    
+}
+
+extension ListingViewController: RedditPostTableViewCellDelegate {
+    func didTapDismiss(_ cell: RedditPostTableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.left)
+            viewModel.removePost(atIndex: indexPath.row)
+            tableView.endUpdates()
+        }
+    }
 }

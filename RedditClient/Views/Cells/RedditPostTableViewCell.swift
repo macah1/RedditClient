@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol RedditPostTableViewCellDelegate: class {
+    func didTapDismiss(_ cell: RedditPostTableViewCell)
+}
+
 class RedditPostTableViewCell: UITableViewCell {
 
     // MARK: - Static
@@ -22,6 +26,9 @@ class RedditPostTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dismissPostButton: UIButton!
     @IBOutlet weak var commentsLabel: UILabel!
+    
+    // MARK: - Properties
+    weak var delegate: RedditPostTableViewCellDelegate?
     
     // MARK: - Funcs
     override func awakeFromNib() {
@@ -58,6 +65,7 @@ class RedditPostTableViewCell: UITableViewCell {
     
     // MARK: - Actions
     @IBAction func dismissPostButtonAction(_ sender: Any) {
+        delegate?.didTapDismiss(self)
     }
     
     

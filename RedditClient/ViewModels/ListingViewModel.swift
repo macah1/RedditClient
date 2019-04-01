@@ -74,4 +74,15 @@ class ListingViewModel {
         }
         return nil
     }
+    
+    func removePost(atIndex index: Int) {
+        if index < posts.count {
+            posts.remove(at: index)
+        }
+    }
+    
+    func reset() {
+        self.posts.removeAll()
+        resetNextId()
+    }
 }
