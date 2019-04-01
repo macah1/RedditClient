@@ -16,6 +16,8 @@ class ListingViewController: UIViewController {
     // MARK: - Properties
     let kShowDetailSegueIdentifier = "showDetail"
     var detailViewController: DetailViewController? = nil
+    var viewModel: ListingViewModel!
+    fileprivate var refreshControl: UIRefreshControl?
 
     // MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -27,6 +29,8 @@ class ListingViewController: UIViewController {
         }
         
         registerTableViewCells()
+        setupViewModel()
+        loadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,9 +55,23 @@ class ListingViewController: UIViewController {
     }
     
     // MARK: - Private
+    fileprivate func loadData() {
+        viewModel?.loadData()
+    }
+    
+    fileprivate func setupViewModel() {
+        viewModel = ListingViewModel()
+        viewModel?.delegate = self
+    }
+    
     fileprivate func registerTableViewCells() {
         let redditPostCell = UINib(nibName: RedditPostTableViewCell.name, bundle: nil)
         self.tableView.register(redditPostCell, forCellReuseIdentifier: RedditPostTableViewCell.identifier)
+    }
+    
+    fileprivate func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool {
+        guard viewModel.hasMorePages else { return false }
+        return indexPath.row == self.viewModel.posts.count
     }
     
     // MARK: - Actions
@@ -67,16 +85,27 @@ class ListingViewController: UIViewController {
 extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if viewModel.posts.isEmpty {
+            return 0
+        }
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        let count = viewModel.posts.count
+        return viewModel.hasMorePages ? count + 1 : count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: RedditPostTableViewCell.identifier, for: indexPath) as? RedditPostTableViewCell {
-            cell.titleLabel.text = "Sample Text"
+            
+            if isLoadingIndexPath(indexPath) {
+                let loadingCell = UITableViewCell()
+                loadingCell.backgroundColor = UIColor.black
+                return loadingCell
+            }
+            let post = viewModel.posts[indexPath.row]
+            cell.setup(withPost: post)
             return cell
         }
         return UITableViewCell()
@@ -85,5 +114,21 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: kShowDetailSegueIdentifier, sender: nil)
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard isLoadingIndexPath(indexPath) else { return }
+        loadData()
+    }
+}
+
+extension ListingViewController: ListingViewModelDelegate {
+    func didLoadedData() {
+        self.tableView.reloadData()
+    }
+    
+    func didEndLoadOperation() {
+        // TODO
+    }
+    
     
 }

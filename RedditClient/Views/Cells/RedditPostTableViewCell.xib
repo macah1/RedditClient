@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="redditPostCell" rowHeight="262" id="KGk-i7-Jjw" customClass="RedditPostTableViewCell" customModule="RedditClient" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="redditPostCell" id="KGk-i7-Jjw" customClass="RedditPostTableViewCell" customModule="RedditClient" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="359" height="262"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -49,7 +49,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-cB-6si">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-cB-6si">
                                 <rect key="frame" x="8" y="61" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="TdH-Hg-1PE"/>
@@ -88,21 +88,21 @@
                         <constraints>
                             <constraint firstItem="Qrd-k8-bbm" firstAttribute="top" secondItem="8bm-qi-2Js" secondAttribute="top" constant="8" id="1dI-Fg-IwY"/>
                             <constraint firstItem="ak8-AM-uJS" firstAttribute="centerY" secondItem="Qrd-k8-bbm" secondAttribute="centerY" id="8V5-hL-0NH"/>
-                            <constraint firstItem="AYT-cB-6si" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qrd-k8-bbm" secondAttribute="bottom" constant="8" id="Eok-og-Q2b"/>
-                            <constraint firstItem="Xtu-fj-Xoy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hKC-Fc-bMY" secondAttribute="bottom" constant="8" id="F3A-ax-tYO"/>
+                            <constraint firstItem="AYT-cB-6si" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qrd-k8-bbm" secondAttribute="bottom" constant="4" id="Eok-og-Q2b"/>
+                            <constraint firstItem="Xtu-fj-Xoy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hKC-Fc-bMY" secondAttribute="bottom" constant="4" id="F3A-ax-tYO"/>
                             <constraint firstItem="AYT-cB-6si" firstAttribute="centerY" secondItem="8bm-qi-2Js" secondAttribute="centerY" id="Pf3-j4-28z"/>
                             <constraint firstItem="Qrd-k8-bbm" firstAttribute="leading" secondItem="ak8-AM-uJS" secondAttribute="trailing" constant="8" id="QEg-Wg-WOu"/>
                             <constraint firstAttribute="trailing" secondItem="hKC-Fc-bMY" secondAttribute="trailing" constant="4" id="Rhp-mj-1tZ"/>
                             <constraint firstItem="hKC-Fc-bMY" firstAttribute="centerY" secondItem="8bm-qi-2Js" secondAttribute="centerY" id="SPp-H9-lbD"/>
                             <constraint firstItem="ak8-AM-uJS" firstAttribute="leading" secondItem="8bm-qi-2Js" secondAttribute="leading" constant="8" id="YJM-OB-RZ2"/>
                             <constraint firstItem="EcB-Kh-M5G" firstAttribute="centerY" secondItem="Xtu-fj-Xoy" secondAttribute="centerY" id="b4t-a6-nUN"/>
-                            <constraint firstItem="hKC-Fc-bMY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qrd-k8-bbm" secondAttribute="bottom" constant="8" id="bQi-cL-B7U"/>
+                            <constraint firstItem="hKC-Fc-bMY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qrd-k8-bbm" secondAttribute="bottom" constant="4" id="bQi-cL-B7U"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qrd-k8-bbm" secondAttribute="trailing" constant="4" id="cuU-Mu-PSD"/>
                             <constraint firstItem="AYT-cB-6si" firstAttribute="leading" secondItem="8bm-qi-2Js" secondAttribute="leading" constant="8" id="eCE-tQ-IPF"/>
                             <constraint firstAttribute="trailing" secondItem="EcB-Kh-M5G" secondAttribute="trailing" constant="4" id="esm-cr-wN9"/>
                             <constraint firstItem="Xtu-fj-Xoy" firstAttribute="leading" secondItem="8bm-qi-2Js" secondAttribute="leading" constant="8" id="hXf-ew-cwm"/>
                             <constraint firstItem="hKC-Fc-bMY" firstAttribute="leading" secondItem="AYT-cB-6si" secondAttribute="trailing" constant="8" id="k9a-MK-TOq"/>
-                            <constraint firstItem="Xtu-fj-Xoy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AYT-cB-6si" secondAttribute="bottom" constant="8" id="yK6-xq-5w7"/>
+                            <constraint firstItem="Xtu-fj-Xoy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AYT-cB-6si" secondAttribute="bottom" constant="4" id="yK6-xq-5w7"/>
                             <constraint firstAttribute="bottom" secondItem="Xtu-fj-Xoy" secondAttribute="bottom" constant="8" id="zgo-fg-TIL"/>
                         </constraints>
                     </view>

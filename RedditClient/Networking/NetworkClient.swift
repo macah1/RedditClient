@@ -25,6 +25,7 @@ class NetworkClient {
                 completion(.failure(error))
             } else if let jsonData = responseData {
                 let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .secondsSince1970
                 do {
                     let objects = try decoder.decode(K.self, from: jsonData)
                     let result: Result<K> = Result.success(objects)

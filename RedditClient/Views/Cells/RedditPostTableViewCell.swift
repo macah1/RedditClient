@@ -35,6 +35,23 @@ class RedditPostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Public
+    func setup(withPost post: Post) {
+        authorLabel.text = post.author ?? ""
+        postDateLabel.text = post.created?.timeAgoSinceDate(numericDates: true) ?? ""
+        titleLabel.text = post.title ?? ""
+        if let numComments = post.numComments {
+            if numComments == 1 {
+                commentsLabel.text = "\(numComments) comment"
+            } else {
+                commentsLabel.text = "\(numComments) comments"
+            }
+        }
+        if let thumbnailURLString = post.thumbnail {
+            thumbImageView.cacheImage(urlString: thumbnailURLString)
+        }
+    }
+    
     // MARK: - Actions
     @IBAction func dismissPostButtonAction(_ sender: Any) {
     }
