@@ -118,6 +118,10 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
             if isLoadingIndexPath(indexPath) {
                 let loadingCell = UITableViewCell()
                 loadingCell.backgroundColor = UIColor.black
+                let myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.white)
+                myActivityIndicator.center = loadingCell.center
+                myActivityIndicator.startAnimating()
+                loadingCell.addSubview(myActivityIndicator)
                 return loadingCell
             }
             let post = viewModel.posts[indexPath.row]
