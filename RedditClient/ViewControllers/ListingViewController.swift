@@ -30,6 +30,7 @@ class ListingViewController: UIViewController {
         
         registerTableViewCells()
         setupViewModel()
+        prepareView()
         loadData()
     }
 
@@ -55,6 +56,12 @@ class ListingViewController: UIViewController {
     }
     
     // MARK: - Private
+    fileprivate func prepareView() {
+        refreshControl = UIRefreshControl()
+        refreshControl!.addTarget(self, action: #selector(refreshControlAction(sender:)), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl!)
+    }
+    
     fileprivate func loadData() {
         viewModel?.loadData()
     }
@@ -78,7 +85,11 @@ class ListingViewController: UIViewController {
     @IBAction func dismissAllButtonAction(_ sender: Any) {
     }
     
-
+    @objc func refreshControlAction(sender: AnyObject) {
+        viewModel.resetNextId()
+        loadData()
+    }
+    
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -127,7 +138,7 @@ extension ListingViewController: ListingViewModelDelegate {
     }
     
     func didEndLoadOperation() {
-        // TODO
+        self.refreshControl?.endRefreshing()
     }
     
     
