@@ -8,9 +8,12 @@
 
 import UIKit
 
-class ListingViewController: UITableViewController {
+class ListingViewController: UIViewController {
 
-    // Mark: - Properties
+    // MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Properties
     let kShowDetailSegueIdentifier = "showDetail"
     var detailViewController: DetailViewController? = nil
 
@@ -27,8 +30,11 @@ class ListingViewController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+        
+        if let selectionIndexPath = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: selectionIndexPath, animated: animated)
+        }
     }
 
     // MARK: - Segues
@@ -43,40 +49,41 @@ class ListingViewController: UITableViewController {
             }
         }
     }
-
-    // MARK: - Table View
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: RedditPostTableViewCell.identifier, for: indexPath) as? RedditPostTableViewCell {
-            cell.titleLabel.text = "Sample Text"
-            return cell
-        }
-        return UITableViewCell()
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: kShowDetailSegueIdentifier, sender: nil)
-    }
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-//            objects.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
     
     // MARK: - Private
     fileprivate func registerTableViewCells() {
         let redditPostCell = UINib(nibName: RedditPostTableViewCell.name, bundle: nil)
         self.tableView.register(redditPostCell, forCellReuseIdentifier: RedditPostTableViewCell.identifier)
     }
+    
+    // MARK: - Actions
+    @IBAction func dismissAllButtonAction(_ sender: Any) {
+    }
+    
 
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
+extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: RedditPostTableViewCell.identifier, for: indexPath) as? RedditPostTableViewCell {
+            cell.titleLabel.text = "Sample Text"
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: kShowDetailSegueIdentifier, sender: nil)
+    }
+    
+}
