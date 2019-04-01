@@ -26,6 +26,7 @@
 		04B9ACB122523EC70081D7C6 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9ACB022523EC70081D7C6 /* Date+Utils.swift */; };
 		04B9ACB3225245130081D7C6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9ACB2225245130081D7C6 /* DetailViewModel.swift */; };
 		04B9ACB5225250910081D7C6 /* PostStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9ACB4225250910081D7C6 /* PostStatus.swift */; };
+		04B9ACB922525BE50081D7C6 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9ACB822525BE50081D7C6 /* SplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		04B9ACB022523EC70081D7C6 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		04B9ACB2225245130081D7C6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		04B9ACB4225250910081D7C6 /* PostStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatus.swift; sourceTree = "<group>"; };
+		04B9ACB822525BE50081D7C6 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			children = (
 				047CF0872250E9B30071E1AC /* ListingViewController.swift */,
 				047CF0892250E9B30071E1AC /* DetailViewController.swift */,
+				04B9ACB822525BE50081D7C6 /* SplitViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				047CF08A2250E9B30071E1AC /* DetailViewController.swift in Sources */,
+				04B9ACB922525BE50081D7C6 /* SplitViewController.swift in Sources */,
 				047CF0FC225104C00071E1AC /* NetworkClient.swift in Sources */,
 				047CF0FE225104F50071E1AC /* RedditAPI.swift in Sources */,
 				047CF10322510A900071E1AC /* Post.swift in Sources */,
