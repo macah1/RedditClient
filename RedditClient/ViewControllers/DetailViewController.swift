@@ -27,6 +27,8 @@ class DetailViewController: UIViewController {
 
     // MARK: - Private
     fileprivate func prepareView() {
+        authorLabel.text = ""
+        titleLabel.text = ""
         if viewModel != nil {
             authorLabel.text = viewModel?.author ?? ""
             titleLabel.text = viewModel?.title ?? ""
