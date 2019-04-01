@@ -51,6 +51,11 @@ class ListingViewController: UIViewController {
 
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
+                
+                if let postIndex = sender as? Int {
+                    let detailViewModel = viewModel.getDetailViewModel(withPostIndex: postIndex)
+                    controller.viewModel = detailViewModel
+                }
             }
         }
     }
@@ -123,7 +128,7 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: kShowDetailSegueIdentifier, sender: nil)
+        self.performSegue(withIdentifier: kShowDetailSegueIdentifier, sender: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

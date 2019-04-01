@@ -14,15 +14,26 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var thumbImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    // MARK: - Properties
+    var viewModel: DetailViewModel?
 
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         prepareView()
     }
 
-    func prepareView() {
-        
+    // MARK: - Private
+    fileprivate func prepareView() {
+        if viewModel != nil {
+            authorLabel.text = viewModel?.author ?? ""
+            titleLabel.text = viewModel?.title ?? ""
+            if let thumbnailURLString = viewModel?.thumbImageUrl {
+                thumbImageView.cacheImage(urlString: thumbnailURLString)
+            }
+        }
     }
 }
 

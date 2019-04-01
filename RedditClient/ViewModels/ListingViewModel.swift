@@ -65,4 +65,13 @@ class ListingViewModel {
     func resetNextId() {
         nextId = nil
     }
+    
+    func getDetailViewModel(withPostIndex index: Int) -> DetailViewModel? {
+        if index < posts.count {
+            let post = posts[index]
+            let detailViewModel = DetailViewModel(withPost: post)
+            return detailViewModel
+        }
+        return nil
+    }
 }

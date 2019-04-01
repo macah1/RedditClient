@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="redditPostCell" id="KGk-i7-Jjw" customClass="RedditPostTableViewCell" customModule="RedditClient" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="359" height="262"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="redditPostCell" rowHeight="186" id="KGk-i7-Jjw" customClass="RedditPostTableViewCell" customModule="RedditClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="186"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="325" height="261.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="323" height="185.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bm-qi-2Js">
-                        <rect key="frame" x="0.0" y="0.0" width="325" height="261.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="185.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ak8-AM-uJS">
                                 <rect key="frame" x="8" y="11.5" width="12" height="14.5"/>
@@ -50,20 +50,20 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-cB-6si">
-                                <rect key="frame" x="8" y="61" width="140" height="140"/>
+                                <rect key="frame" x="8" y="58" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="TdH-Hg-1PE"/>
-                                    <constraint firstAttribute="width" constant="140" id="mLL-Dp-ds7"/>
+                                    <constraint firstAttribute="height" constant="70" id="TdH-Hg-1PE"/>
+                                    <constraint firstAttribute="width" constant="70" id="mLL-Dp-ds7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reddit post title sample" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKC-Fc-bMY">
-                                <rect key="frame" x="156" y="122.5" width="165" height="17"/>
+                                <rect key="frame" x="86" y="84.5" width="233" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtu-fj-Xoy">
-                                <rect key="frame" x="8" y="213.5" width="125" height="40"/>
+                                <rect key="frame" x="8" y="137.5" width="125" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Blh-cQ-OBD"/>
                                     <constraint firstAttribute="width" constant="125" id="VsF-to-pZz"/>
@@ -79,7 +79,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1900 Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcB-Kh-M5G">
-                                <rect key="frame" x="214.5" y="225" width="106.5" height="17"/>
+                                <rect key="frame" x="212.5" y="149" width="106.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.76225823790000002" blue="0.2884891671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -127,7 +127,7 @@
                 <outlet property="thumbImageView" destination="AYT-cB-6si" id="vSp-nM-mQb"/>
                 <outlet property="titleLabel" destination="hKC-Fc-bMY" id="tBW-rZ-Emg"/>
             </connections>
-            <point key="canvasLocation" x="136.80000000000001" y="184.40779610194903"/>
+            <point key="canvasLocation" x="53.600000000000001" y="174.51274362818592"/>
         </tableViewCell>
     </objects>
     <resources>

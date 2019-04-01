@@ -24,6 +24,7 @@
 		04B9ACAC225239D50081D7C6 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9ACAB225239D50081D7C6 /* ListingViewModel.swift */; };
 		04B9ACAF22523DF20081D7C6 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9ACAE22523DF20081D7C6 /* UIImageView+Utils.swift */; };
 		04B9ACB122523EC70081D7C6 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9ACB022523EC70081D7C6 /* Date+Utils.swift */; };
+		04B9ACB3225245130081D7C6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9ACB2225245130081D7C6 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		04B9ACAB225239D50081D7C6 /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
 		04B9ACAE22523DF20081D7C6 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		04B9ACB022523EC70081D7C6 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		04B9ACB2225245130081D7C6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				04B9ACAB225239D50081D7C6 /* ListingViewModel.swift */,
+				04B9ACB2225245130081D7C6 /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				04B9ACB122523EC70081D7C6 /* Date+Utils.swift in Sources */,
 				047CF101225109600071E1AC /* TopPosts.swift in Sources */,
 				04B9ACAC225239D50081D7C6 /* ListingViewModel.swift in Sources */,
+				04B9ACB3225245130081D7C6 /* DetailViewModel.swift in Sources */,
 				047CF0BC2250EBF20071E1AC /* RedditPostTableViewCell.swift in Sources */,
 				047CF0882250E9B30071E1AC /* ListingViewController.swift in Sources */,
 				04B9ACAF22523DF20081D7C6 /* UIImageView+Utils.swift in Sources */,
