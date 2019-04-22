@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,7 +52,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-cB-6si">
                                 <rect key="frame" x="8" y="58" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="TdH-Hg-1PE"/>
+                                    <constraint firstAttribute="width" secondItem="AYT-cB-6si" secondAttribute="height" multiplier="1:1" id="GZx-1Y-5lw"/>
                                     <constraint firstAttribute="width" constant="70" id="mLL-Dp-ds7"/>
                                 </constraints>
                             </imageView>
@@ -63,9 +63,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtu-fj-Xoy">
-                                <rect key="frame" x="8" y="137.5" width="125" height="40"/>
+                                <rect key="frame" x="8" y="159.5" width="125" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Blh-cQ-OBD"/>
                                     <constraint firstAttribute="width" constant="125" id="VsF-to-pZz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -79,7 +78,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1900 Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcB-Kh-M5G">
-                                <rect key="frame" x="212.5" y="149" width="106.5" height="17"/>
+                                <rect key="frame" x="212.5" y="160" width="106.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.76225823790000002" blue="0.2884891671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -131,6 +130,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="round_highlight_off_black_18pt" width="36" height="36"/>
+        <image name="round_highlight_off_black_18pt" width="18" height="18"/>
     </resources>
 </document>

@@ -156,6 +156,14 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
         guard isLoadingIndexPath(indexPath) else { return }
         loadData()
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 186
+    }
 }
 
 extension ListingViewController: ListingViewModelDelegate {
